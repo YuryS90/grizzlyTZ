@@ -9,7 +9,18 @@ class UserController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
-        $data = $request->validated();
-        return UserData::create($data);
+        try {
+            $data = $request->validated();
+            UserData::create($data);
+
+            return response()->json(['message' => 'Успешно'], 201);
+        } catch (\Exception $e) {
+
+            return response()->json([
+                'message' => 'Ошибка на сервере',
+                'errors' => $e->getMessage(),
+                'old' => $request->all(),
+            ], 400);
+        }
     }
 }
