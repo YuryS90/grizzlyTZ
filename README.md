@@ -1,10 +1,11 @@
 # grizzTz
     Запуск проекта
     1 Установить все зависимости, выполнив комнады "composer i" и "npm i"
-    2 Установить sqlite
-    2 Выполнить "php artisan migrate"
-    2 npm run dev
-    3 Если есть, то запустить локальный сервер 
+    2 Добавить в database файл database.sqlite
+    3 Настроить SQLite и привязать к её к database.sqlite
+    4 Выполнить "php artisan migrate"
+    5 npm run dev
+    6 Если есть, то запустить локальный сервер 
     либо выполнить команду "php artisan serve"
 
         Примечание
